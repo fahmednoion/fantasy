@@ -1,0 +1,27 @@
+{
+  "name": "mig66-ai-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "inspect": "HEADLESS=false node inspect.js",
+    "debug": "HEADLESS=false DEBUG=true node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "chrome-remote-interface": "^0.34.0",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "http-proxy": "^1.18.1",
+    "node-fetch": "^3.3.2",
+    "socket.io-client": "^4.8.3",
+    "ws": "^8.21.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
