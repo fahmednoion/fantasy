@@ -695,12 +695,12 @@ async function handleParentCommand(content, senderName, callerAccount) {
 
   // ── Auto-welcome toggle ───────────────────────────────────
   if (/^\|aw\s+on/i.test(cmd)) {
-    target.awOn = false;
+    target.awOn = true;
     reply(`✅ Auto-welcome ON for @${target.username} 👋`);
     return;
   }
   if (/^\|aw\s+off/i.test(cmd)) {
-    target.awOn = true;
+    target.awOn = false;
     reply(`⛔ Auto-welcome OFF for @${target.username}`);
     return;
   }
