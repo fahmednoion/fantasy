@@ -61,7 +61,13 @@ const ROOM_LIST = new Map([
   ["Nepal", 3],
   ["Philippine", 4],
   ["Indonesia", 5],
-  ["Savages", 46],
+  ["Savages", 21],
+  ["Bangladeshi", 20],
+  ["Kolkata", 238],
+  ["Faysal", 228],
+  ["Buy Sell", 288],
+  ["Coin Bazar", 305],
+  ["Coins Sell group", 306],
 ]);
 
 function addRoom(roomName, roomId) {
@@ -89,8 +95,8 @@ class BotAccount {
     this.socket = null;
     this.joinedRooms = new Set();
     this.voucherOn = true;
-    this.awOn = true;
-    this.autoReplyOn = true;
+    this.awOn = false;
+    this.autoReplyOn = false;
     this.awTemplate = process.env.AW_MESSAGE || "Wc {username} 🎉 Welcome!";
     this.balance = null;
     this.isConnected = false;
@@ -689,12 +695,12 @@ async function handleParentCommand(content, senderName, callerAccount) {
 
   // ── Auto-welcome toggle ───────────────────────────────────
   if (/^\|aw\s+on/i.test(cmd)) {
-    target.awOn = true;
+    target.awOn = false;
     reply(`✅ Auto-welcome ON for @${target.username} 👋`);
     return;
   }
   if (/^\|aw\s+off/i.test(cmd)) {
-    target.awOn = false;
+    target.awOn = true;
     reply(`⛔ Auto-welcome OFF for @${target.username}`);
     return;
   }
